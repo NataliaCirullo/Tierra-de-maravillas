@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Imagen placeholder de naturaleza</title>
+  <desc id="desc">Paisaje ilustrado con montanas, arboles y cielo para usar en la seccion hero.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dbe6d4" />
+      <stop offset="100%" stop-color="#f8f4ec" />
+    </linearGradient>
+    <linearGradient id="hill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#365443" />
+      <stop offset="100%" stop-color="#49745d" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)" />
+  <circle cx="1230" cy="170" r="84" fill="#f0e7d8" />
+  <path d="M0 550c160-120 314-190 480-190s350 72 492 191c129 109 330 148 628 90v259H0z" fill="url(#hill)" />
+  <path d="M0 640c230-112 410-122 550-40 150 87 360 88 505 31 149-58 319-63 545 8v261H0z" fill="#2d4a3b" />
+  <g fill="#234033">
+    <path d="M210 640l35-120 35 120z" />
+    <path d="M260 640l35-140 35 140z" />
+    <path d="M1310 650l36-130 36 130z" />
+    <path d="M1360 650l32-116 32 116z" />
+    <path d="M1410 650l28-105 28 105z" />
+  </g>
+</svg>

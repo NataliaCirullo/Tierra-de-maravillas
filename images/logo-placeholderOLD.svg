@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Logo placeholder Tierra de Maravillas</title>
+  <desc id="desc">Circulo con hojas estilizadas y las letras TM.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8f4ec" />
+      <stop offset="100%" stop-color="#dbe8dc" />
+    </linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="78" fill="url(#bg)" stroke="#365443" stroke-width="2" />
+  <path d="M50 90c18-1 30-14 31-33-16 2-30 17-31 33z" fill="#49745d" />
+  <path d="M110 94c-14 0-26-10-27-24 15 1 26 12 27 24z" fill="#6d8f78" />
+  <text x="80" y="122" text-anchor="middle" font-family="Marcellus, serif" font-size="24" fill="#1f2f26">TM</text>
+</svg>

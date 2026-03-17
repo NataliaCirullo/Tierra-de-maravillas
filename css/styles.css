@@ -1,0 +1,456 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@300;400;500;600&display=swap");
+
+:root {
+  --forest-900: #1f3128;
+  --forest-800: #2f4739;
+  --forest-600: #5f7b68;
+  --sage-300: #d2dfcf;
+  --moss-200: #e4ece0;
+  --sand-100: #f7f2e7;
+  --sand-200: #efe5d0;
+  --earth-500: #8d6e50;
+  --clay-300: #ddccb6;
+  --white: #ffffff;
+  --ink: #263429;
+  --radius-lg: 1.2rem;
+  --radius-md: 0.9rem;
+  --shadow-soft: 0 16px 40px rgba(26, 42, 31, 0.13);
+  --container: min(1100px, 92vw);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  background: linear-gradient(160deg, #faf6ec 0%, #f4ecde 50%, #ede5d8 100%);
+  position: relative;
+}
+
+/* Adds a subtle grain-like layer to avoid a flat background. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  background-image:
+    radial-gradient(circle at 18% 22%, rgba(210, 223, 207, 0.45) 0, rgba(210, 223, 207, 0) 36%),
+    radial-gradient(circle at 84% 16%, rgba(225, 207, 184, 0.35) 0, rgba(225, 207, 184, 0) 38%),
+    radial-gradient(circle at 70% 78%, rgba(178, 198, 182, 0.28) 0, rgba(178, 198, 182, 0) 34%);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: var(--container);
+  margin: 0 auto;
+}
+
+.narrow {
+  max-width: 760px;
+}
+
+.section {
+  padding: clamp(3.8rem, 8vw, 6.2rem) 0;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(249, 244, 235, 0.84);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(47, 71, 57, 0.14);
+}
+
+.header-content {
+  min-height: 4.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.33rem;
+  letter-spacing: 0.03em;
+  color: var(--forest-900);
+}
+
+.brand img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(47, 71, 57, 0.28);
+  background: #f3ebdd;
+  object-fit: cover;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.15rem;
+  align-items: center;
+}
+
+.site-nav a {
+  position: relative;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--forest-900);
+  letter-spacing: 0.01em;
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.34rem;
+  width: 100%;
+  height: 1px;
+  background: var(--forest-600);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.site-nav a:hover::after,
+.site-nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.menu-toggle {
+  display: none;
+  border: 1px solid rgba(31, 49, 40, 0.3);
+  background: rgba(255, 255, 255, 0.66);
+  color: var(--forest-900);
+  border-radius: 999px;
+  padding: 0.45rem 0.95rem;
+  font: inherit;
+}
+
+.hero {
+  position: relative;
+  min-height: 76vh;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.06);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(105deg, rgba(15, 27, 21, 0.74) 8%, rgba(21, 34, 27, 0.4) 50%, rgba(21, 34, 27, 0.18) 100%),
+    radial-gradient(circle at 78% 24%, rgba(239, 229, 208, 0.22) 0, rgba(239, 229, 208, 0) 34%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  color: #f8f3e8;
+  padding: clamp(1.5rem, 3vw, 2.2rem);
+  border-radius: 1.3rem;
+  background: linear-gradient(145deg, rgba(20, 33, 26, 0.46), rgba(20, 33, 26, 0.22));
+  border: 1px solid rgba(230, 238, 227, 0.24);
+  backdrop-filter: blur(2px);
+  animation: heroIn 900ms ease both;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.17em;
+  font-size: 0.78rem;
+  margin-bottom: 0.6rem;
+  color: #d7e4d5;
+}
+
+.hero h1,
+.about h2,
+.proposals h2,
+.contact h2,
+.card h3 {
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.01em;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 4.1rem);
+  line-height: 1.06;
+  margin: 0 0 0.8rem;
+}
+
+.hero p {
+  max-width: 58ch;
+  margin-top: 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.72rem 1.35rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--sand-200);
+  color: #203126;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: #e5d8bf;
+}
+
+.about {
+  position: relative;
+  background: linear-gradient(180deg, #faf4e8 0%, #f1e7d5 100%);
+  border-top: 1px solid rgba(95, 123, 104, 0.22);
+  border-bottom: 1px solid rgba(95, 123, 104, 0.18);
+}
+
+.about::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(95, 123, 104, 0.35) 25%, rgba(95, 123, 104, 0.35) 75%, transparent 100%);
+}
+
+.about h2,
+.proposals h2,
+.contact h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: 0.9rem;
+  color: var(--forest-900);
+}
+
+.proposals {
+  background: linear-gradient(180deg, #f8f2e6 0%, #efe5d4 100%);
+}
+
+.proposals .cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(165deg, rgba(253, 249, 241, 0.96), rgba(230, 239, 225, 0.82));
+  border: 1px solid rgba(47, 71, 57, 0.16);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--forest-600) 0%, var(--earth-500) 100%);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.55rem;
+  color: var(--forest-800);
+  font-size: 1.48rem;
+  line-height: 1.15;
+}
+
+.card p {
+  margin-top: 0;
+}
+
+.btn-secondary {
+  border-color: rgba(47, 71, 57, 0.38);
+  color: var(--forest-900);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background: var(--moss-200);
+}
+
+.contact {
+  background:
+    linear-gradient(180deg, #f6efdf 0%, #eadfca 100%),
+    radial-gradient(circle at 20% 10%, rgba(210, 223, 207, 0.35) 0, rgba(210, 223, 207, 0) 40%);
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.2rem;
+}
+
+.btn-whatsapp {
+  background: #2f8f58;
+  color: var(--white);
+}
+
+.btn-whatsapp:hover,
+.btn-whatsapp:focus-visible {
+  background: #287c4c;
+}
+
+.btn-instagram {
+  background: #8b5f46;
+  color: var(--white);
+}
+
+.btn-instagram:hover,
+.btn-instagram:focus-visible {
+  background: #744e3a;
+}
+
+.site-footer {
+  background: linear-gradient(110deg, #1f3128 0%, #253a30 100%);
+  color: #dce7d8;
+  padding: 1.8rem 0;
+  font-size: 0.93rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.95rem;
+  flex-wrap: wrap;
+}
+
+.footer-content a {
+  color: #d6ecd6;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: var(--stagger-delay, 0ms);
+}
+
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 900px) {
+  .proposals .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero h1 {
+    max-width: 17ch;
+  }
+}
+
+@media (max-width: 720px) {
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 4.8rem;
+    right: 4vw;
+    display: grid;
+    min-width: 190px;
+    padding: 0.9rem;
+    border-radius: var(--radius-md);
+    background: rgba(250, 244, 233, 0.97);
+    border: 1px solid rgba(47, 71, 57, 0.2);
+    box-shadow: var(--shadow-soft);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+
+  .site-nav.is-open {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+
+  .hero {
+    min-height: 68vh;
+  }
+
+  .hero-content {
+    padding: 1.2rem;
+  }
+
+  .proposals .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}
