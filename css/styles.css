@@ -170,7 +170,7 @@ a {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(105deg, rgba(15, 27, 21, 0.74) 8%, rgba(21, 34, 27, 0.4) 50%, rgba(21, 34, 27, 0.18) 100%),
+    linear-gradient(105deg, rgba(15, 27, 21, 0.74) 8%, rgba(21, 34, 27, 0.4) 50%, rgba(21, 34, 27, 0.18) 100%)
     radial-gradient(circle at 78% 24%, rgba(239, 229, 208, 0.22) 0, rgba(239, 229, 208, 0) 34%);
 }
 
