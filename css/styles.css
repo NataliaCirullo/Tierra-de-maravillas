@@ -357,6 +357,123 @@ a {
   background: #744e3a;
 }
 
+.talleres {
+  background: linear-gradient(180deg, #f4ede0 0%, #ebe0ce 100%);
+}
+
+.talleres h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: 0.9rem;
+  color: var(--forest-900);
+}
+
+.taller-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.taller-card {
+  background: linear-gradient(165deg, rgba(253, 249, 241, 0.97), rgba(230, 239, 225, 0.86));
+  border: 1px solid rgba(47, 71, 57, 0.16);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+}
+
+.taller-img-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--moss-200);
+}
+
+.taller-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+
+.taller-card:hover .taller-img {
+  transform: scale(1.04);
+}
+
+.taller-img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  background: linear-gradient(135deg, var(--moss-200) 0%, var(--clay-300) 100%);
+}
+
+.taller-body {
+  padding: 1.4rem 1.5rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.taller-body h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  line-height: 1.15;
+  color: var(--forest-800);
+  margin: 0 0 0.55rem;
+}
+
+.taller-detail {
+  color: var(--ink);
+  margin: 0 0 1rem;
+  font-size: 0.97rem;
+}
+
+.taller-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.taller-meta li {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  font-size: 0.9rem;
+}
+
+.taller-meta-label {
+  font-weight: 600;
+  color: var(--forest-800);
+  min-width: 5rem;
+  flex-shrink: 0;
+}
+
+.taller-meta-value {
+  color: var(--forest-600);
+}
+
+@media (max-width: 900px) {
+  .taller-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .taller-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 .site-footer {
   background: linear-gradient(110deg, #1f3128 0%, #253a30 100%);
   color: #dce7d8;
